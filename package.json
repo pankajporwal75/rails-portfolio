@@ -1,0 +1,10 @@
+{
+  "name": "pankaj_portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Pankaj Porwal <pankajporwal75@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.7.1"
+  }
+}
