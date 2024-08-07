@@ -7,25 +7,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <%#= link_to 'Rooms', rooms_path, class: 'nav-link active' %>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Settings
-          </a>
-          <ul class="dropdown-menu">
-            <%#= link_to 'Room Categories', categories_path, class: "dropdown-item" %>
-          </ul>
+          <%= link_to 'Text', texts_path, class: 'nav-link active' %>
         </li>
       </ul>
       <ul class="navbar-nav mb-lg-0">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <%#= current_hotel ? current_hotel.email : "User" %>
+            <%= current_user.present? ? current_user.name : "User" %>
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Profile</a></li>
-            <%#= link_to 'Sign Out', destroy_hotel_session_path, class: "dropdown-item", method: :delete %>
+            <%= link_to 'Sign Out', destroy_user_session_path, class: "dropdown-item", method: :delete %>
           </ul>
         </li>
       </ul>
