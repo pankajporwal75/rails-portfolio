@@ -1,0 +1,10 @@
+<div class="d-flex justify-content-between ms-0 m-4">
+  <div class="float-left">
+    <h1>Portfolio Text</h1>
+  </div>
+  <div class="float-right">
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+          new_text_path,
+          :class => 'btn btn-primary pull-right', remote: true %>
+  </div>
+</div>
