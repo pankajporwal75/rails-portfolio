@@ -14,7 +14,7 @@
                 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
                   <div class="d-flex align-items-center mb-3 pb-1">
-                    <span class="h1 fw-bold mb-0">Check-In Manager</span>
+                    <span class="h1 fw-bold mb-0">Pankaj Porwal</span>
                   </div>
 
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
@@ -45,13 +45,6 @@
                   <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
                     <%= link_to "Forgot your password?", new_password_path(resource_name), class: "small text-muted" %><br />
                   <% end %>
-                  
-                  <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account?
-                      <%= link_to 'Register Here', new_registration_path(resource_name), style: "color: #393f81"  %>
-                    </p>
-                  <% end %>
-
 
                   <!----Terms and Service----->
                   <a href="#!" class="small text-muted">Terms of use.</a>

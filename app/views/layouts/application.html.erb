@@ -12,7 +12,7 @@
 
   <body>
   <div class="container">
-    <%= render 'shared/navbar' %>
+    <%= render 'shared/navbar' if user_signed_in? %>
     <div class="flash_messages">
       <%#= render 'shared/toaster_flash' %>
       <%= render 'shared/toastr_flash_new' %>
