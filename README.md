@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is Backend Application built with rails to show dynamic content on React Portfolio using Rest API.
 
-Things you may want to cover:
+Setup Process:
 
-* Ruby version
+Setup Postgres on your local system.
 
-* System dependencies
+Change Settings in config/database.yml to setup your development database.
 
-* Configuration
+Run 'bin/setup' to setup the application.
 
-* Database creation
+Run 'rails db:migrate:status' to check the status of migrations.
 
-* Database initialization
+If all the migrations are up, you are good to go, if not, run 'rails db:migrate' to run the down migrations
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Once the schema is loaded, start your rails server by 'rails s'
