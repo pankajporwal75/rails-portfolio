@@ -9,7 +9,7 @@ class TextsController < ApplicationController
   end
 
   def new
-    @text = Text.new
+    @text = Text.new(text_params)
   end
 
   def edit
@@ -17,13 +17,9 @@ class TextsController < ApplicationController
 
   def create
     @text = Text.new(text_params)
-    respond_to do |format|
-      if @text.save
-        flash[:notice] = "Text was saved successfully."
-        format.js { }
-      else
-        format.js { }
-      end
+    if @text.save
+      redirect_to params[:path].present? ? params[:path] : texts_path
+      flash[:notice] = "Text was saved successfully."
     end
   end
 
@@ -54,6 +50,6 @@ class TextsController < ApplicationController
     end
 
     def text_params
-      params.require(:text).permit(:key, :value)
+      params.require(:text).permit(:category, :section, :key, :value)
     end
 end
