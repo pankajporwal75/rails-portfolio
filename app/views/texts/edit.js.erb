@@ -1,0 +1,4 @@
+$('#exampleModalCenter').find('.modal-title').text("<%=t '.title', :default => [:'helpers.titles.new', 'Edit %{model}'], :model => 'Text' %>");
+$('#exampleModalCenter').find('.modal-body').html("<%= escape_javascript(render 'form') %>");
+$('#exampleModalCenter').modal('show');
+$('#modal_submit').attr("disabled", false);
