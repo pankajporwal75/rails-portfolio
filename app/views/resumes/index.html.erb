@@ -1,0 +1,17 @@
+<div class="d-flex justify-content-between ms-0 m-4">
+  <div class="float-left">
+    <h1>Resumes</h1>
+  </div>
+  <div class="float-right">
+    <%= link_to "New Resume", new_resume_path, class: "btn btn-primary float-right" %>
+  </div>
+</div>
+
+<div id="resumes">
+  <% @resumes.each do |resume| %>
+    <h3><%= resume.title %></h3>
+    <p>
+      <%= link_to "Show this resume", resume %>
+    </p>
+  <% end %>
+</div>

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  resources :resumes
+  resources :contact_requests, only: [:index, :show, :delete]
   devise_for :users
-  resources :texts
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
