@@ -1,4 +1,4 @@
-<%= form_with(model: resume) do |form| %>
+<%= form_with(model: resume) do |f| %>
   <% if resume.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(resume.errors.count, "error") %> prohibited this resume from being saved:</h2>
@@ -12,16 +12,21 @@
   <% end %>
 
   <div class="mb-3">
-    <%= form.label :title, class: "form-label" %>
-    <%= form.text_field :title, class: "form-control" %>
+    <%= f.label :title, class: "form-label" %>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :file, class: "form-label" %>
-    <%= form.file_field :file, class: "form-control" %>
+    <%= f.label :file, class: "form-label" %>
+    <%= f.file_field :file, class: "form-control" %>
+  </div>
+
+  <div class="mb-3 form-check">
+    <%= f.label :active, class: "form-check-label" %>
+    <%= f.check_box :active, class: "form-check-input" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

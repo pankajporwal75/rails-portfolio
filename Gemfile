@@ -81,3 +81,8 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
+
+# For PDF previews
+gem 'image_processing', '~> 1.2'
+gem 'mini_magick'
+gem 'poppler', '~> 3.0', '>= 3.0.7'

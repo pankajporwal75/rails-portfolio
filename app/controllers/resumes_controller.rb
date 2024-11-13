@@ -45,6 +45,6 @@ class ResumesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def resume_params
-      params.require(:resume).permit(:title, :file)
+      params.require(:resume).permit(:title, :file, :active)
     end
 end

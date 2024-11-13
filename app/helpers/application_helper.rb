@@ -7,4 +7,8 @@ module ApplicationHelper
     return 'warning' if type == 'warning'
   end
 
+  def format_date(date)
+    date.strftime("%d %b, %Y")
+  end  
+
 end
