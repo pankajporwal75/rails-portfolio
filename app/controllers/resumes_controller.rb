@@ -1,8 +1,8 @@
 class ResumesController < ApplicationController
-  before_action :set_resume, only: %i[ show edit update destroy ]
+  before_action :set_resume, only: %i[ show edit update destroy mark_as_active ]
 
   def index
-    @resumes = Resume.all
+    @resumes = Resume.all.order(created_at: :desc)
   end
 
   def show
@@ -30,6 +30,12 @@ class ResumesController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def mark_as_active
+    Resume.active.update_all(active: false)
+    @resume.update(active: true)
+    redirect_to resumes_url, notice: "Active resume was successfully updated."
   end
 
   def destroy
