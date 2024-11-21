@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # Admin Routes
   resources :resumes
-  resources :contact_requests, only: [:index, :show, :delete]
+  resources :contact_requests, only: [:index, :show, :delete, :update]
   devise_for :users
   
   # Health Check Route
