@@ -1,0 +1,21 @@
+<h1>Contact requests</h1>
+<br>
+<div id="contact_requests">
+</div>
+<% @contact_requests.each do |contact_request| %>
+  <div class="outer-div">
+    <div class="inner-div">
+      <div class="front">
+        <div class="front__bkg-photo"></div>
+        <div class="front__face-photo"></div>
+        <div class="front__text">
+          <h3 class="front__text-header"><%= contact_request.name %></h3><br>
+          <p class="front__text-para"><i class="fas fa-envelope"></i> <%= contact_request.email %></p>
+          <p class="front__text-para"><i class="fas fa-clock"></i> Request On: <%= format_date(contact_request.created_at) %></p>
+          <%# <span class="front__text-hover">Show</span> %>
+          <%= link_to "Show", contact_request, class: 'front__text-hover' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

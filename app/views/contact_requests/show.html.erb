@@ -1,0 +1,30 @@
+<div class="container mt-5">    
+  <div class="row d-flex justify-content-center">      
+    <div class="col-md-7">
+      <div class="card p-3 py-4">
+        <div class="text-center">
+            <img src="https://i.imgur.com/bDLhJiP.jpg" width="100" class="rounded-circle">
+        </div>
+        <div class="text-center mt-3">
+          <span class="bg-secondary p-1 px-4 rounded text-white">Request On: <%= format_date(@contact_request.created_at) %></span>
+          <h5 class="mt-2 mb-0"><%= @contact_request.name %></h5>
+          <span><%= @contact_request.email %></span>
+            
+          <div class="px-4 my-5">
+              <p class="fonts">
+                "<%= @contact_request.message %>"
+              </p>
+          </div>
+            
+          <div class="buttons">
+            <% if @contact_request.mark_as_seen %>
+              <button disabled class="btn btn-outline-primary px-4">Mark as Seen</button>
+            <% else %>
+              <%= link_to "Mark as Seen", contact_request_path(@contact_request), class: 'btn btn-outline-primary px-4', method: :patch %>
+            <% end %>
+          </div>    
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

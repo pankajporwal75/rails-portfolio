@@ -8,12 +8,12 @@ default: &default
 development:
   <<: *default
   database: pankaj_portfolio
-  username: dell_inspiron
+  username: dell
   password: 123456
 
 production:
   <<: *default
   database: pankaj_portfolio_production
-  username: dell_inspiron
+  username: dell
   password: 123456
 
