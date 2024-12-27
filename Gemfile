@@ -28,7 +28,7 @@ gem "jbuilder"
 
 gem "bootstrap"
 gem "sassc-rails"
-
+gem 'therubyracer', :platforms => :ruby
 gem 'jquery-rails'
 
 gem 'sweetalert-rails'
@@ -63,12 +63,13 @@ group :development, :test do
 end
 
 group :development do
-
-  gem 'capistrano', require: false
-  gem 'capistrano-rails', require: false
-  gem 'capistrano-passenger', require: false # If using Passenger
-  gem 'capistrano-rbenv', require: false # If using rbenv
-  gem 'capistrano-bundler', require: false
+  # Capistrano for deployment
+  gem 'capistrano'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-faster-assets'
+  gem 'capistrano-rails-collection'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
