@@ -63,6 +63,12 @@ group :development, :test do
 end
 
 group :development do
+
+  gem 'capistrano', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-passenger', require: false # If using Passenger
+  gem 'capistrano-rbenv', require: false # If using rbenv
+  gem 'capistrano-bundler', require: false
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
