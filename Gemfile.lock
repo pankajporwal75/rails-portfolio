@@ -229,14 +229,14 @@ GEM
     puma (6.4.2)
       nio4r (~> 2.0)
     racc (1.7.3)
-    rack (3.0.11)
-    rack-session (2.0.0)
-      rack (>= 3.0.0)
+    rack (2.2.10)
+    rack-session (1.0.2)
+      rack (< 3)
     rack-test (2.1.0)
       rack (>= 1.3)
-    rackup (2.1.0)
-      rack (>= 3)
-      webrick (~> 1.8)
+    rackup (1.0.1)
+      rack (< 3)
+      webrick
     rails (7.1.3.3)
       actioncable (= 7.1.3.3)
       actionmailbox (= 7.1.3.3)
@@ -298,12 +298,13 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sprockets (4.2.1)
+    sprockets (3.7.5)
+      base64
       concurrent-ruby (~> 1.0)
-      rack (>= 2.2.4, < 4)
-    sprockets-rails (3.4.2)
-      actionpack (>= 5.2)
-      activesupport (>= 5.2)
+      rack (> 1, < 3)
+    sprockets-rails (3.5.2)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
       sprockets (>= 3.0.0)
     sshkit (1.23.2)
       base64
@@ -321,11 +322,10 @@ GEM
       libv8 (~> 3.16.14.15)
       ref
     thor (1.3.1)
-    tilt (2.3.0)
+    tilt (2.5.0)
     timeout (0.4.1)
-    turbo-rails (2.0.5)
+    turbo-rails (2.0.11)
       actionpack (>= 6.0.0)
-      activejob (>= 6.0.0)
       railties (>= 6.0.0)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
@@ -353,7 +353,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  bootstrap
+  bootstrap (~> 5.3.0)
   bootstrap3-datetimepicker-rails (~> 4.17.47)
   capistrano
   capistrano-bundler
