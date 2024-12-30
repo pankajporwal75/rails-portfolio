@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   end
 
   # Admin Routes
-  resources :resumes
+  resources :resumes do
+    member do
+      get :mark_as_active
+    end
+  end
   resources :contact_requests, only: [:index, :show, :delete, :update]
   devise_for :users
   
