@@ -93,3 +93,6 @@ gem "devise", "~> 4.9"
 gem 'image_processing', '~> 1.2'
 gem 'mini_magick'
 gem 'poppler', '~> 3.0', '>= 3.0.7'
+
+# For exception emails
+gem 'exception_notification'
