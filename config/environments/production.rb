@@ -49,7 +49,7 @@ Rails.application.configure do
   # config.assume_ssl = true
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  config.force_ssl = true
+  config.force_ssl = false
 
   # Log to STDOUT by default
   config.logger = ActiveSupport::Logger.new(STDOUT)
@@ -87,6 +87,13 @@ Rails.application.configure do
   # Optional: Set the default "from" address
   config.action_mailer.default_options = {
     from: Rails.application.credentials[:production][:smtp][:email]
+  }
+
+  # Enable exception notifications
+  config.middleware.use ExceptionNotification::Rack,
+  :email => {
+    :sender_address => Rails.application.credentials[:production][:smtp][:email],
+    :exception_recipients => Rails.application.credentials[:production][:smtp][:email]
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
