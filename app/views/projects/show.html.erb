@@ -1,0 +1,40 @@
+<%= link_to projects_path, class: 'btn btn-outline-dark btn-sm' do %>
+  <i class="fas fa-arrow-left"></i> Back
+<% end %>
+<div class="container mt-5">    
+  <div class="row d-flex justify-content-center">      
+    <div class="col-md-7">
+      <div class="card p-3 py-4">
+        <div class="text-center mt-3">
+          <span class="bg-secondary p-2 px-4 rounded text-white"><%= @project.name %></span>
+          <h5 class="mt-2 mb-0"><%=  %></h5>
+          <span><%=  %></span>
+            
+          <div class="px-4 my-5">
+              <p class="fonts">
+                "<%= @project.description %>"
+              </p>
+          </div>
+
+          <div class="px-4 my-5">
+            <%= link_to (@project.github.present? ? @project.github : '#'), target: '_blank', class: 'btn btn-outline-dark px-4 mx-2' do %>
+              <i class="fab fa-github"></i> GitHub
+            <% end %>
+            <%= link_to (@project.link.present? ? @project.link : '#'), target: '_blank', class: 'btn btn-outline-dark px-4 mx-2' do %>
+              <i class="fa-solid fa-link"></i> Link
+            <% end %>
+          </div>
+            
+          <div class="buttons">
+            <% if @project.active %>
+              <%= link_to "Mark as Inactive", toggle_status_project_path(@project), class: 'btn btn-outline-danger px-4' %>
+            <% else %>
+              <%= link_to "Mark as Active", toggle_status_project_path(@project), class: 'btn btn-outline-success px-4' %>
+            <% end %>
+          </div>  
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

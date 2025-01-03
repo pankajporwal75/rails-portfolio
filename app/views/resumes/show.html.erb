@@ -1,8 +1,8 @@
+<%= link_to resumes_path, class: 'btn btn-outline-dark btn-sm' do %>
+  <i class="fas fa-arrow-left"></i> Back
+<% end %>
 <div class="d-flex justify-content-between ms-0 m-4">
   <div class="float-left">
-  <%= link_to resumes_path, class: '' do %>
-    <i class="fas fa-arrow-left"></i> Back
-  <% end %>
     <h1><%= @resume.title %> <%= "(Active)" if @resume.active %></h1>
   </div>
   <div class="float-right">
