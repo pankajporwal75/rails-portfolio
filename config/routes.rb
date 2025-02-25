@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :contact_requests, only: [:create]
     resources :projects, only: [:index]
+    get 'resume' => 'resumes#index'
   end
 
   # Admin Routes
