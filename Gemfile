@@ -96,3 +96,6 @@ gem 'poppler', '~> 3.0', '>= 3.0.7'
 
 # For exception emails
 gem 'exception_notification'
+
+# CORS
+gem 'rack-cors'
