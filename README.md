@@ -4,6 +4,12 @@ This is Backend Application built with rails to show dynamic content on React Po
 
 Setup Process:
 
+Install these dependencies:
+1  sudo apt-get install poppler-utils
+2  sudo apt-get install imagemagick
+3  sudo apt install libvips42
+4  sudo apt install libvips-dev
+
 Setup Postgres on your local system.
 
 Change Settings in config/database.yml to setup your development database.
