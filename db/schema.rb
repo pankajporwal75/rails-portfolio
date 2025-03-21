@@ -71,13 +71,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_03_164338) do
     t.boolean "active", default: false
   end
 
-  create_table "texts", force: :cascade do |t|
-    t.string "key"
-    t.text "value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email", default: "", null: false
