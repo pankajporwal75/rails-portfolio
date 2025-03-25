@@ -27,8 +27,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install system dependencies
-        run: sudo apt-get update && sudo apt-get install poppler-utils && sudo apt-get install imagemagick && sudo apt install libvips42 && sudo apt install libvips-dev && sudo apt-get install -y libcairo2-dev && sudo apt-get install libgirepository1.0-dev libpoppler-glib-dev
+      - name: Install System Dependencies
+        uses: sudo apt install libpoppler-cpp-dev && sudo apt install poppler-utils
 
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@v1
@@ -36,7 +36,7 @@ jobs:
           bundler-cache: true
 
       - name: Set up database
-        run: bin/rails db:prepare
+        run: bundle exec rake db:prepare
 
       - name: Run tests
-        run: bin/rake
+        run: bundle exec rake
