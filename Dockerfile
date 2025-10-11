@@ -5,16 +5,14 @@ RUN apt-get update -qq && apt-get install -y \
   build-essential \
   postgresql-client \
   nodejs \
-  yarn \
-  libvips42 \
-  libvips-dev \
+  libpoppler-dev \
   libimage-exiftool-perl \
   imagemagick \
-  poppler-utils \
-  libpoppler-dev \
-  && rm -rf /var/lib/apt/lists/*
+  libvips42 \
+  libvips-dev \
+  poppler-utils
 
-WORKDIR /app
+WORKDIR /backend
 
 # Install bundler
 RUN gem install bundler
@@ -29,10 +27,9 @@ COPY . .
 # Precompile assets
 ENV RAILS_ENV=production
 ENV RACK_ENV=production
-RUN bundle exec rails assets:precompile
 
 # Expose port
 EXPOSE 3000
 
 # Run using Puma (configured in config/puma.rb)
-CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
+ENTRYPOINT [ "./script/start_prod.sh" ]

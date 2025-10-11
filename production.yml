@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   db:
     image: postgres:11
@@ -11,17 +9,21 @@ services:
       POSTGRES_DB: pankaj_portfolio_prod
 
   web:
-    image: pankajportfolio:latest
+    image: pankajporwal75/portfolio_rails_backend:latest
     working_dir: /backend
+    volumes:
+      - storage:/backend/storage
     depends_on:
       - db
     ports:
       - "3000:3000"
     environment:
       - RAILS_ENV=production
-      - DATABASE_URL=postgres://postgres:postgres@db/pankaj_portfolio_dev
+      - DATABASE_URL=postgres://postgres:postgres@db/pankaj_portfolio_prod
+      - RAILS_MASTER_KEY=${MASTER_KEY}
 
 volumes:
   db-data:
     driver: local
-  
+  storage:
+    driver: local

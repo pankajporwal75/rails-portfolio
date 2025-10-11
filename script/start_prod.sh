@@ -1,9 +1,18 @@
 #!/bin/bash
 
+set -e
+
+echo "Installing Gems and Dependencies..."
 bundle check || bundle install
 
-rm -f tmp/pids/server.pid
+# Precompile assets
+echo "Precompiling Rails assets..."
+bundle exec rails assets:precompile
 
-rails db:migrate
+# Run migrations (optional)
+echo "Running database migrations..."
+bundle exec rails db:migrate
 
-rails s -b '0.0.0.0'
+# Start Puma (or your app server)
+echo "Starting Puma..."
+exec bundle exec puma -C config/puma.rb
