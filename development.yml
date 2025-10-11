@@ -6,8 +6,8 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
     environment:
-      POSTGRES_USERNAME: portfolio
-      POSTGRES_PASSWORD: portfolio
+      POSTGRES_USERNAME: postgres
+      POSTGRES_PASSWORD: postgres
       POSTGRES_DB: pankaj_portfolio_dev
 
   web:
@@ -15,8 +15,7 @@ services:
     stdin_open: true
     build:
       context: .
-      dockerfile: Dockerfile
-    command: ./script/start_dev.sh
+      dockerfile: Dockerfile.dev
     depends_on:
       - db
     volumes:
@@ -24,6 +23,7 @@ services:
     working_dir: /backend
     environment:
       - RAILS_ENV=development
+      - DATABASE_URL=postgres://postgres:postgres@db/pankaj_portfolio_dev
     ports:
       - "3000:3000"
 
