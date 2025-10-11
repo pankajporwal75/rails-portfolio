@@ -4,6 +4,7 @@
 #
 
 User.create!(
+  name: 'Pankaj Porwal',
   email: 'pankajporwal75@gmail.com',
   password: '123456',
   password_confirmation: '123456'
