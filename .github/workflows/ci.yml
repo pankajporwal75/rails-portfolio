@@ -18,13 +18,6 @@ jobs:
       - name: Start DB Container
         run: docker compose -f development.yml up -d db
 
-      - name: Wait for DB to be ready
-        run: |
-          until docker compose -f development.yml exec -T db pg_isready -U $POSTGRES_USER; do
-            echo "Waiting for database..."
-            sleep 2
-          done
-
       - name: Prepare Database
         run: docker compose -f development.yml run --rm --entrypoint="" web bundle exec rails db:prepare
 
